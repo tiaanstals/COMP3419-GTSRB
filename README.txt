@@ -71,5 +71,8 @@ mv GTSRB/Final_Test/Images/* dataset/TEST/Images/
 rm -rf GTSRB
 rm -rf GTSRB_Final_Test_Images.zip
 
+5. Final model
+Note the final model with 97.9% accuracy is the models_112/AUGMENT_2.pth. The test.py function has been set up to test this model
+
 
 
