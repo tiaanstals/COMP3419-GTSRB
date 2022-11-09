@@ -14,11 +14,6 @@ Transform112 = transforms.Compose([
     transforms.Resize([112, 112]),
     transforms.ToTensor(),
     ])
-base_transforms = transforms.Compose([
-    transforms.Resize([112,112]),
-    transforms.ToTensor(),
-    transforms.Lambda(lambda img:K.color.rgb_to_luv(img))
-    ])
 Transform227 = transforms.Compose([
     transforms.Resize([227, 227]),
     transforms.ToTensor(),
@@ -34,7 +29,7 @@ class GTSRB_Test_Loader(Dataset):
         self.df = pd.read_csv(TEST_GT_PATH,sep=';')
         self.TEST_PATH = TEST_PATH
         if (MODEL == 112):
-            self.Transform = base_transforms
+            self.Transform = Transform112
         else:
             self.Transform = Transform227
         self.MODEL = MODEL
